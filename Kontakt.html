@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="keywords" content="Chanel Coco Mademoiselle, Dior Sauvage, L’Oréal True Match foundation, Estée Lauder Double Wear foundation, MAC Ruby Woo lipstick">
+    <meta name="title" content="Pink & Care">
+    <meta name="copyright" content="Natalija Jočin VD 9/22">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="Stylesheet" href="Stylesheet.css">
+    <script src="https://kit.fontawesome.com/590dcf6971.js" crossorigin="anonymous"></script>
+    <title>Kozmetička prodavnica </title>
+</head>
+<body>
+    <h1 class="line">Pink & Care!</h1>
+    <h2>Kozmetička prodavnica</h2>
+    <style>
+         :root {
+            --background-color: pink;
+        }
+        [data-theme='dark'] {
+            --background-color: black;
+        }
+        body {
+            background-color: var(--background-color);
+        }
+    </style>
+
+    <button id="Menjatemo">Tema</button>
+    <script>
+        function menjaboju() {
+            let currentTheme = localStorage.getItem('theme');
+            if (!currentTheme || currentTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        document.getElementById('Menjatemo').addEventListener('click', menjaboju);
+    </script>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="ONama.html">O nama</a> </li>
+
+            <li> <a href="Proizvodi.html">Proizvodi</a></li>
+
+            <li><a href="Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+       
+        <div class="kontaktstil">
+            <form id="contaktForm">
+                <img id="slika2" src="Slike/tell.jpg" >
+    
+                <p>Ime i prezime:</p>
+                <input type="text" id="fullName" class="popunavanjeforme">
+    
+                <p>Broj telefona:</p>
+                <input type="text" id="phoneNumber" inputmode="numeric" class="popunavanjeforme">
+    
+                <p>E-mail:</p>
+                <input type="email" id="email" class="popunavanjeforme">
+                
+                <p>Unesite vase pitanje ili problem:</p>
+                <input type="text" id="question" class="popunavanjeforme">
+    
+                <br><br>
+                
+                <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/sr_RS/sdk.js#xfbml=1&version=v21.0"></script>
+                <button type="button"><div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div></button>
+                 <br>
+                 
+                <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/sr_RS/sdk.js#xfbml=1&version=v21.0"></script>
+               <button type="button"> <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="" data-action="" data-size="" data-share="true">like</div></button>
+             <br> 
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        © 2025 Natalija Jočin
+    </footer>
+    
+    <script>
+        
+        const form = document.getElementById('contaktForm');
+        
+          const prijava = document.getElementById('prijava');
+
+        
+          prijava.addEventListener('click', function() {
+            
+           
+         let inputs = document.querySelectorAll('.popunavanjeforme');
+            let svepopuni = true;
+
+            
+            for (let i = 0; i < inputs.length; i++) {
+                if (inputs[i].value.trim() === '') {
+                   
+                 inputs[i].value = 'prazno polje popunim';
+                   
+                 allFieldsFilled = false;
+                }
+            }
+
+            if (!svepopuni) {
+                return;
+            }
+            form.submit(); 
+        });
+    </script>
+</body>
+
+</html>
+
+

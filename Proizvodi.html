@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="keywords" content="Chanel Coco Mademoiselle, Dior Sauvage, L’Oréal True Match foundation, Estée Lauder Double Wear foundation, MAC Ruby Woo lipstick">
+    <meta name="title" content="Pink & Care">
+    <meta name="copyright" content="Natalija Jočin VD 9/22">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Stylesheet.css">
+    <script src="https://kit.fontawesome.com/590dcf6971.js" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Kozmetička prodavnica </title>
+</head>
+<body>
+    <h1 class="line">Pink & Care!</h1>
+    <h2>Kozmetička prodavnica</h2>
+    <style>
+        :root {
+            --background-color: pink;
+        }
+        [data-theme='dark'] {
+            --background-color: black;
+        }
+        body {
+            background-color: var(--background-color);
+        }
+    </style>
+
+    <button id="Menjatemo">Tema</button>
+    <script>
+        function menjaboju() {
+            let currentTheme = localStorage.getItem('theme');
+            if (!currentTheme || currentTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        document.getElementById('Menjatemo').addEventListener('click', menjaboju);
+    </script>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="ONama.html">O nama</a> </li>
+
+            <li> <a href="Proizvodi.html">Proizvodi</a></li>
+
+            <li><a href="Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+       <h1>
+            Ovde možete videti sve proizvode koje nudimo i njihovu cenu.
+        </h1>
+
+        <div class="proizvodi">
+            
+
+            <div class="box">
+                <img class="telefoni_slike" src="Slike/chanel_coco.jpg">
+                <p>Chanel Coco Mademoiselle</p>
+                <p>150eur</p>
+                <a href="Kupovina.html">Kupi</a>
+            </div>
+            
+            <div class="box">
+                <img class="telefoni_slike" src="Slike/dior_sauvage.jpg">
+                <p>Dior Sauvage</p>
+                <p>130eur</p>
+                <a href="Kupovina.html">Kupi</a>
+            </div>
+            
+            <div class="box">
+                <img class="telefoni_slike" src="Slike/loreal_true_match.jpg">
+                <p>L’Oréal True Match foundation</p>
+                <p>20eur</p>
+                <a href="Kupovina.html">Kupi</a>
+            </div>
+            
+            <div class="box">
+                <img class="telefoni_slike" src="Slike/estee_double_wear.jpg">
+                <p>Estée Lauder Double Wear foundation</p>
+                <p>45eur</p>
+                <a href="Kupovina.html">Kupi</a>
+            </div>
+            
+            <div class="box">
+                <img class="telefoni_slike" src="Slike/mac_ruby_woo.jpg">
+                <p> MAC Ruby Woo lipstick</p>
+                <p>30eur</p>
+                <a href="Kupovina.html">Kupi</a>
+            </div>
+            
+        </div>
+        <br><br>
+    
+</main>
+<footer class="footer">
+    © 2025 Natalija Jočin
+</footer>
+</body>
+
+</html>

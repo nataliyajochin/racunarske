@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="keywords" content="Chanel Coco Mademoiselle, Dior Sauvage, L’Oréal True Match foundation, Estée Lauder Double Wear foundation, MAC Ruby Woo lipstick">
+    <meta name="title" content="Pink & Care">
+    <meta name="copyright" content="Natalija Jočin VD 9/22">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Stylesheet.css">
+    <script src="https://kit.fontawesome.com/590dcf6971.js" crossorigin="anonymous"></script>
+    <title><title>Kozmetička prodavnica </title></title>
+</head>
+<body>
+    <h1 class="line">Pink & Care!</h1>
+    <h2>Kozmetička prodavnica</h2>
+    <style>
+         :root {
+            --background-color: pink;
+        }
+        [data-theme='dark'] {
+            --background-color: black;
+        }
+        body {
+            background-color: var(--background-color);
+        }
+    </style>
+
+    <button id="Menjatemo">Tema</button>
+    <script>
+        function menjaboju() {
+            let currentTheme = localStorage.getItem('theme');
+            if (!currentTheme || currentTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+        document.getElementById('Menjatemo').addEventListener('click', menjaboju);
+    </script>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="ONama.html">O nama</a></li>
+            <li><a href="Proizvodi.html">Proizvodi</a></li>
+            <li><a href="Kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <main>
+            <div class="kupistil">
+                <form id="purchaseForm">
+        
+                    <p>Ime i prezime:</p>
+                    <input type="text" id="ImeKU" class="kup_popuni_forme">
+        
+                    <p>Broj telefona:</p>
+                    <input type="text" id="BrojKU" inputmode="numeric" class="kup_popuni_forme">
+        
+                    <p>E-mail:</p>
+                    <input type="email" id="emailKU" class="kup_popuni_forme">
+        
+                    <p>Unesite proizvod koji hoćete da kupite:</p>
+        
+                    <input type="radio" name="telKU" id="parfem1" class="kup_popuniformu" value="Chanel Coco Mademoiselle">
+                    <label for="parfem1">Chanel Coco Mademoiselle</label><br>
+        
+                    <input type="radio" name="telKU" id="parfem2" class="kup_popuniformu" value="Dior Sauvage">
+                    <label for="parfem2">Dior Sauvage</label><br>
+        
+                    <input type="radio" name="telKU" id="puder1" class="kup_popuniformu" value="L’Oréal True Match foundation">
+                    <label for="puder1">L’Oréal True Match foundation</label><br>
+        
+                    <input type="radio" name="telKU" id="puder2" class="kup_popuniformu" value=" Estée Lauder Double Wear foundation">
+                    <label for="puder2">Estée Lauder Double Wear foundation</label><br>
+        
+                    <input type="radio" name="telKU" id="karmin1" class="kup_popuniformu" value="MAC Ruby Woo lipstick">
+                    <label for="karmin1">MAC Ruby Woo lipstick</label><br><br>
+        
+                    <button type="button" id="prijava">Pošalji</button>
+        
+                </form>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            © 2025 Natalija Jočin
+        </footer>
+        
+        <script>
+            function generateFileContent(ImeKU, telKU, emailKU, selectedTelKU) {
+                return `Ovo je vaša porudzbina koja stiže za 8 dana
+        
+        Ime i prezime: ${ImeKU}
+        Broj telefona: ${telKU}
+        E-mail: ${emailKU}
+        Proizvod: ${selectedTelKU}`;
+            }
+        
+            document.getElementById('prijava').addEventListener('click', function() {
+        
+                let ImeKU = document.getElementById('ImeKU').value;
+                let BrojKU = document.getElementById('BrojKU').value;
+                let emailKU = document.getElementById('emailKU').value;
+        
+                let selectedTelKU = '';
+                const telKUs = document.querySelectorAll('input[name="telKU"]');
+        
+                telKUs.forEach((telKU) => {
+                    if (telKU.checked) {
+                        selectedTelKU = telKU.value;
+                    }
+                });
+        
+                if (!ImeKU || !BrojKU || !emailKU || !selectedTelKU) {
+                    alert("Molimo vas da popunite sve podatke i izaberete proizvod.");
+                    return;
+                }
+        
+                let fileContent = generateFileContent(ImeKU, BrojKU, emailKU, selectedTelKU);
+        
+                let blob = new Blob([fileContent], { type: 'text/plain' });
+                let link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'podaci_kupovine.txt';
+                link.click();
+                URL.revokeObjectURL(link.href);
+            });
+        </script>
+        </body>
+
+    </html>        
